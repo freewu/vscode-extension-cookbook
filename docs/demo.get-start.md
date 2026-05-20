@@ -1,15 +1,16 @@
 # 第一个 Hello World 扩展
 
 ## 安装脚手架工具
-```
+```bash
 npm install --global yo generator-code
 ```
 
 ## 初始化项目
+```bash
+yo code
 ```
-mkdir hello-world
-cd ./hello-world
-yo code               
+按提示选择
+```bash
 
      _-----_     ╭──────────────────────────╮
     |       |    │   Welcome to the Visual  │
@@ -34,9 +35,78 @@ yo code
 ```
 
 ## 目录结构
-```
+```bash
+.
+└── hello-world
+    ├── CHANGELOG.md
+    ├── README.md
+    ├── eslint.config.mjs
+    ├── node_modules
+    ├── package.json                    vscode 扩展配置文件
+    ├── pnpm-lock.yaml
+    ├── src
+    │   ├── extension.ts                vscode 扩展入口文件 由 package.json 中的 main 字段指定
+    │   └── test
+    │       └── extension.test.ts
+    ├── tsconfig.json
+    └── vsc-extension-quickstart.md
 
 ```
+
+## package.json (只展示和扩展配置相关的内容)
+```json
+{
+	// 扩展的激活事件
+	"activationEvents": [
+		"onCommand:hello-world.helloWorld"
+	],
+	// 入口文件
+	"main": "./src/extension",
+	// 贡献点，vscode插件大部分功能配置都在这里
+	"contributes": {
+		"commands": [
+			{
+				"command": "hello-world.helloWorld'",
+				"title": "Hello World"
+			}
+		]
+	}
+}
+```
+
+## extension.ts
+```typescript
+import * as vscode from 'vscode';
+
+// 扩展激活时调用
+export function activate(context: vscode.ExtensionContext) {
+	console.log('Congratulations, your extension "hello-world" is now active!');
+    // 注册命令  命令 ID 必须与 package.json 中的命令 ID 匹配
+	const disposable = vscode.commands.registerCommand('hello-world.helloWorld', () => {
+        // 显示信息消息
+		vscode.window.showInformationMessage('Hello World from hello world!');
+	});
+	context.subscriptions.push(disposable);
+}
+
+// 扩展停用时调用
+export function deactivate() {
+    console.log('hello-world extension is now deactivated!');
+}
+```
+
+## 编译代码 (如果是 TypeScript 项目 需要先编译)
+```bash
+cd ./hello-world
+pnpm run compile
+```
+
+## 运行调试
+<img src="./images/hello-world/debug.png" alt="debug" width="90%" />
+
+## 验证
+<img src="./images/hello-world/result1.png" alt="result" width="90%" />
+<img src="./images/hello-world/result2.png" alt="result" width="90%" />
 
 
 ## 资料

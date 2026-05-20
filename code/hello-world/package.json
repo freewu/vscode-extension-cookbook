@@ -14,7 +14,7 @@
   "contributes": {
     "commands": [
       {
-        "command": "hello-world.helloWorld",
+        "command": "helloworld.sayHello",
         "title": "Hello World"
       }
     ]
