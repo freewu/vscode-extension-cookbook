@@ -11,7 +11,12 @@
   <!-- 文件夹样式 -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar-folder.min.css" />
   <!-- 箭头样式 -->
-  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" /> -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" />
+  <style>
+    .docsify-sidebar-collapse {
+      background-color: #f5f5f5;
+    }
+  </style>
 </head>
 <body>
   <div id="app"></div>
@@ -21,7 +26,7 @@
         //logo: '/images/icon.png', // 在侧边栏中出现的网站图标，你可以使用CSS来更改大小
         // 侧边栏文档目录
         loadSidebar: true,
- 
+        themeColor: "#0078d4",
         //subMaxLevel: 2,
         alias: {
           "/.*/_sidebar.md": "/_sidebar.md",
