@@ -145,6 +145,23 @@ package.json 中编辑 contributes, 配置右键菜单和快捷键
 <img src="./images/hello-world/menu-result1.png" alt="result" width="90%" />
 <img src="./images/hello-world/menu-result2.png" alt="result" width="90%" />
 
+## 打包
+### 安装打包工具
+```bash
+npm i vsce -g
+```
+
+### 将扩张打包成.vsix文件
+```bash
+vsce package
+```
+
+### 验证打包结果
+```bash
+ls *.vsix
+```
+<img src="./images/hello-world/package.png" alt="vsix" width="90%" />
+
 ## 资料
 ```
 https://code.visualstudio.com/api/get-started/your-first-extension

@@ -17,5 +17,6 @@ _book
 *.epub
 *.mobi
 *.pdf
+*.vsix
 
 package-lock.json
