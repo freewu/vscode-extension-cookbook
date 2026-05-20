@@ -17,7 +17,24 @@
         "command": "helloworld.sayHello",
         "title": "Hello World"
       }
-    ]
+    ],
+		"keybindings": [
+			{
+				"command": "helloworld.sayHello",
+				"key": "ctrl+f10",
+				"mac": "cmd+f10",
+				"when": "editorTextFocus"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"when": "editorFocus",
+					"command": "helloworld.sayHello",
+					"group": "navigation"
+				}
+			]
+		}
   },
   "scripts": {
     "vscode:prepublish": "pnpm run compile",

@@ -108,6 +108,42 @@ pnpm run compile
 <img src="./images/hello-world/result1.png" alt="result" width="90%" />
 <img src="./images/hello-world/result2.png" alt="result" width="90%" />
 
+## 添加右键菜单和快捷键
+package.json 中编辑 contributes, 配置右键菜单和快捷键
+```json
+{
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.sayHello",
+				"title": "Hello World"
+			}
+		],
+		// 快捷键绑定
+		"keybindings": [
+			{
+				"command": "extension.sayHello",
+				"key": "ctrl+f10",
+				"mac": "cmd+f10",
+				"when": "editorTextFocus"
+			}
+		],
+		// 设置菜单
+		"menus": {
+			"editor/context": [
+				{
+					"when": "editorFocus",
+					"command": "extension.sayHello",
+					"group": "navigation"
+				}
+			]
+		}
+	}
+}
+```
+## 验证
+<img src="./images/hello-world/menu-result1.png" alt="result" width="90%" />
+<img src="./images/hello-world/menu-result2.png" alt="result" width="90%" />
 
 ## 资料
 ```
