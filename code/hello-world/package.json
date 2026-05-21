@@ -14,13 +14,13 @@
   "contributes": {
     "commands": [
       {
-        "command": "helloworld.sayHello",
+        "command": "demo1.sayHello",
         "title": "Hello World"
       }
     ],
 		"keybindings": [
 			{
-				"command": "helloworld.sayHello",
+				"command": "demo1.sayHello",
 				"key": "ctrl+f10",
 				"mac": "cmd+f10",
 				"when": "editorTextFocus"
@@ -30,7 +30,7 @@
 			"editor/context": [
 				{
 					"when": "editorFocus",
-					"command": "helloworld.sayHello",
+					"command": "demo1.sayHello",
 					"group": "navigation"
 				}
 			]

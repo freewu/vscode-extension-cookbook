@@ -42,6 +42,7 @@ yo code
     ├── README.md
     ├── eslint.config.mjs
     ├── node_modules
+    ├── out                             Typescript 编译输出目录
     ├── package.json                    vscode 扩展配置文件
     ├── pnpm-lock.yaml
     ├── src
@@ -58,15 +59,15 @@ yo code
 {
 	// 扩展的激活事件
 	"activationEvents": [
-		"onCommand:hello-world.helloWorld"
+		"onCommand:demo1.helloWorld"
 	],
 	// 入口文件
-	"main": "./src/extension",
+	"main": "./out/extension.js",
 	// 贡献点，vscode插件大部分功能配置都在这里
 	"contributes": {
 		"commands": [
 			{
-				"command": "hello-world.helloWorld'",
+				"command": "demo1.helloWorld",
 				"title": "Hello World"
 			}
 		]
@@ -82,9 +83,9 @@ import * as vscode from 'vscode';
 export function activate(context: vscode.ExtensionContext) {
 	console.log('Congratulations, your extension "hello-world" is now active!');
     // 注册命令  命令 ID 必须与 package.json 中的命令 ID 匹配
-	const disposable = vscode.commands.registerCommand('hello-world.helloWorld', () => {
+	const disposable = vscode.commands.registerCommand('demo1.helloWorld', () => {
         // 显示信息消息
-		vscode.window.showInformationMessage('Hello World from hello world!');
+		vscode.window.showInformationMessage('Hello World from hello-world!');
 	});
 	context.subscriptions.push(disposable);
 }
@@ -115,14 +116,14 @@ package.json 中编辑 contributes, 配置右键菜单和快捷键
 	"contributes": {
 		"commands": [
 			{
-				"command": "extension.sayHello",
+				"command": "demo1.sayHello",
 				"title": "Hello World"
 			}
 		],
 		// 快捷键绑定
 		"keybindings": [
 			{
-				"command": "extension.sayHello",
+				"command": "demo1.sayHello",
 				"key": "ctrl+f10",
 				"mac": "cmd+f10",
 				"when": "editorTextFocus"
@@ -133,7 +134,7 @@ package.json 中编辑 contributes, 配置右键菜单和快捷键
 			"editor/context": [
 				{
 					"when": "editorFocus",
-					"command": "extension.sayHello",
+					"command": "demo1.sayHello",
 					"group": "navigation"
 				}
 			]
