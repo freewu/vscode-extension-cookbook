@@ -163,6 +163,9 @@ ls *.vsix
 ```
 <img src="./images/hello-world/package.png" alt="vsix" width="90%" />
 
+## 项目代码
+> https://github.com/freewu/vscode-extension-cookbook/tree/main/code/hello-world
+
 ## 资料
 ```
 https://code.visualstudio.com/api/get-started/your-first-extension

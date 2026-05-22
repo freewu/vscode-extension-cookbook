@@ -4,7 +4,9 @@
 * [参考资料](./README.md#参考资料  "Visual Studio Code Extension Cookbook 参考资料")
 
 ## 入门
-* [第一个 Hello World 扩展](./demo.get-start.md "第一个 Hello World 扩展")
+* [Hello World](./demo.get-start.md "第一个 Hello World 扩展")   
+* [用户体验指南](./demo.ui-guidelines.md "VScode UI 介绍的扩展")   
+
 
 ## API 
 * [debug](./api.debug.md "debug 调试相关 API")
