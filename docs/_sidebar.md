@@ -9,8 +9,22 @@
 * [Settings](./demo.settings.md "VScode Settings 配置相关")   
 
 ## API 
-* [debug](./api.debug.md "debug 调试相关 API")
-* [env](./api.env.md "env 相关 API")
+* [authentication](./api.authentication.md "authentication 相关 API")   
+* [chat](./api.chat.md "chat 相关 API")   
+* [commands](./api.commands.md "commands 相关 API")   
+* [comments](./api.comments.md "comments 相关 API")   
+* [debug](./api.debug.md "debug 调试相关 API")   
+* [env](./api.env.md "env 相关 API")   
+* [extensions](./api.extensions.md "extensions 相关 API")   
+* [l10n](./api.l10n.md "l10n 相关 API")   
+* [languages](./api.languages.md "languages 相关 API")   
+* [lm](./api.lm.md "lm 相关 API")   
+* [notebooks](./api.notebooks.md "notebooks 相关 API")   
+* [scm](./api.scm.md "scm 相关 API")   
+* [tasks](./api.tasks.md "tasks 相关 API")   
+* [tests](./api.tests.md "tests 相关 API")   
+* [window](./api.window.md "window 相关 API")   
+* [workspace](./api.workspace.md "workspace 相关 API")   
 
 ## package.json 配置
 * [Extension Manifest](./references.manifest.md  "Extension Manifest")   
