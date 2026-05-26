@@ -1,25 +1,17 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 
-// This method is called when your extension is activated
-// Your extension is activated the very first time the command is executed
+let myStatusBarItem: vscode.StatusBarItem;
+
 export function activate(context: vscode.ExtensionContext) {
-
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "ui-guidelines" is now active!');
-
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
-	const disposable = vscode.commands.registerCommand('ui-guidelines.helloWorld', () => {
-		// The code you place here will be executed every time your command is executed
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from ui-guidelines!');
-	});
-
-	context.subscriptions.push(disposable);
+	const statusBarClickId = 'demo2.showStatusBar';
+	context.subscriptions.push(vscode.commands.registerCommand(statusBarClickId, () => { // 注册 status bar item 点击事件
+		vscode.window.showInformationMessage(`click bluefrog status bar`);
+	}));
+	myStatusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 100); // 展示位置
+	myStatusBarItem.command = statusBarClickId; // 绑定点击事件
+	context.subscriptions.push(myStatusBarItem); // 注册到上下文
+	myStatusBarItem.text = 'bluefrog status bar'; // status bar 要展示的内容
+	myStatusBarItem.show(); // 显示
 }
 
 // This method is called when your extension is deactivated

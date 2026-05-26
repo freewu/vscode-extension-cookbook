@@ -47,6 +47,13 @@ test: Test explorer view in the Side Bar
 ### 效果验证
 <img src="./images/ui-guidelines/activity-bar.png" alt="新增活动栏 Activity Bar" width="90%" />
 
+### 资料
+```
+https://code.visualstudio.com/api/ux-guidelines/overview
+https://code.visualstudio.com/api/references/contribution-points#contributes.viewsContainers
+https://code.visualstudio.com/api/references/contribution-points#contributes.views
+```
+
 ## 侧边栏 Sidebars 
 
 > 主侧边栏和辅助侧边栏由一个或多个视图容器提供的视图组成
@@ -93,15 +100,36 @@ test: Test explorer view in the Side Bar
 
 
 
-## Status Bar
+## 状态栏 Status Bar
+
+### extenstion.ts 
+```typescript
+import * as vscode from 'vscode';
+
+let myStatusBarItem: vscode.StatusBarItem;
+
+export function activate(context: vscode.ExtensionContext) {
+	const statusBarClickId = 'demo2.showStatusBar';
+	context.subscriptions.push(vscode.commands.registerCommand(statusBarClickId, () => { // 注册 status bar item 点击事件
+		vscode.window.showInformationMessage(`click bluefrog status bar`);
+	}));
+	myStatusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 100); // 展示位置
+	myStatusBarItem.command = statusBarClickId; // 绑定点击事件
+	context.subscriptions.push(myStatusBarItem); // 注册到上下文
+	myStatusBarItem.text = 'bluefrog status bar'; // status bar 要展示的内容
+	myStatusBarItem.show(); // 显示
+}
+```
+
+### 效果验证
+<img src="./images/ui-guidelines/status-bar.png" alt="新增状态栏 Status Bar" width="90%" />
+
+### 资料
+```markdown
+https://github.com/microsoft/vscode-extension-samples/tree/main/statusbar-sample
+https://code.visualstudio.com/api/references/vscode-api#StatusBarItem
+```
 
 
 ## 项目代码
 > https://github.com/freewu/vscode-extension-cookbook/tree/main/code/ui-guidelines
-
-## 资料
-```
-https://code.visualstudio.com/api/ux-guidelines/overview
-https://code.visualstudio.com/api/references/contribution-points#contributes.viewsContainers
-https://code.visualstudio.com/api/references/contribution-points#contributes.views
-```

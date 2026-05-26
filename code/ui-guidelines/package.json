@@ -19,6 +19,13 @@
                 "title": "Demo2 Activity Bar", 
                 "icon": "resources/icon.svg"
             }
+        ],
+        "panel": [
+            {
+                "id": "demo2-panel",
+                "title": "Demo2 Panel",
+                "icon": "resources/icon.svg"
+            }
         ]
     },
     "views": {
@@ -31,6 +38,16 @@
                 "id": "demo2-outline",
                 "name": "Outline"
             }
+        ],
+        "demo2-panel": [
+          {
+              "id": "demo2-panel-dependencies",
+              "name": "中文看看"
+          },
+          {
+              "id": "demo2-panel-outline",
+              "name": "Outline"
+          }
         ]
     },
     "commands": [
