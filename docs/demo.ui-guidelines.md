@@ -95,10 +95,10 @@ https://code.visualstudio.com/api/references/contribution-points#contributes.vie
 ### 效果验证
 <img src="./images/ui-guidelines/panel.png" alt="新增面板 Panel" width="90%" />
 
-
-## Editor
-
-
+### 资料
+```
+https://code.visualstudio.com/api/references/contribution-points#contributes.viewsContainers
+```
 
 ## 状态栏 Status Bar
 
@@ -130,6 +130,13 @@ https://github.com/microsoft/vscode-extension-samples/tree/main/statusbar-sample
 https://code.visualstudio.com/api/references/vscode-api#StatusBarItem
 ```
 
+## 视图 Views
+> 视图是内容容器，可以显示在侧边栏或面板中。视图可以包含树状视图、欢迎视图或 Web 视图，还可以显示视图操作。用户可以重新排列视图，或将其移动到另一个视图容器（例如，从主侧边栏移动到辅助侧边栏）。由于其他扩展程序也可以在同一个视图容器中显示内容，因此请限制创建的视图数量。
+
+### 资料
+```markdown
+https://code.visualstudio.com/api/ux-guidelines/views
+```
 
 ## 项目代码
 > https://github.com/freewu/vscode-extension-cookbook/tree/main/code/ui-guidelines
