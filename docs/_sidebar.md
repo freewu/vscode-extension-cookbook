@@ -11,6 +11,10 @@
 ## API 
 * [debug](./api.debug.md "debug 调试相关 API")
 
+## package.json 配置
+* [Extension Manifest](./references.manifest.md  "Extension Manifest")   
+* [Contribution Points](./references.contribution-points.md  "Contribution Points")   
+
 
 ## 实战项目
 * [Magic Tools for VSCode](./demo.magic-tools.md "Magic Tools for VSCode")
