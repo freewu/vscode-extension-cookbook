@@ -60,6 +60,118 @@ description: Description of what the skill does and when to use it.
 Detailed instructions for the skill...
 ```
 
+## 扩展设置相关
+### configuration
+> 用户可以在设置编辑器中设置这些配置选项，也可以直接编辑 settings.json 文件
+```json
+{
+    "configuration": {
+      "title": "Settings Editor Test Extension",
+      "type": "object",
+      "properties": {
+        "demo3.booleanExample": {
+          "type": "boolean",
+          "default": true,
+          "description": "Boolean Example",
+          "order": 3,
+          "markdownDescription": "See the [bluefrog homepage](https://freewu.github.io/) \n\n next paragraph"
+        },
+        "demo3.stringExample": {
+          "type": "string",
+          "default": "bluefrog",
+          "order": 0,
+          "description": "String Example",
+          "maxLength": 100,
+          "minLength": 5
+        },
+        "demo3.numberExample": {
+          "type": "number",
+          "default": 100,
+          "order": 1,
+          "description": "Number Example",
+          "minimum": 0,
+          "maximum": 1000
+        },
+        "demo3.enumExample": {
+          "type": "string",
+          "enum": ["first", "second", "third"],
+          "markdownEnumDescriptions": [
+            "The *first* enum",
+            "The *second* enum",
+            "The *third* enum"
+          ],
+          "order": 0,
+          "enumItemLabels": ["1st", "2nd", "3rd"],
+          "default": "first",
+          "description": "Example setting with an enum"
+        },
+        "demo3.arrayExample": {
+          "type": "array",
+          "default": [],
+          "description": "Array Example"
+        },
+        "demo3.objetExample": {
+          "type": "object",
+          "default": {},
+          "description": "Object Example"
+        },
+        "demo3.deprecatedExample": {
+          "type": "string",
+          "default": "Deprecated property",
+          "description": "Deprecated Example",
+          "markdownDeprecationMessage": "**Deprecated**: This property is deprecated. Please use the new property instead."
+        },
+        "demo3.patternStringExample": {
+          "type": "string",
+          "default": "Hello World",
+          "pattern": "^[a-zA-Z0-9_]+$",
+          "patternErrorMessage": "Only letters, numbers, and underscores are allowed"
+        },
+        "demo3.dateFormatStringExample": {
+            "type": "string",
+            "default": "2023-01-01",
+            "format": "date",
+            "description": "Date format Example"
+        }
+      }
+    }
+  }
+}
+```
+Configuration property Schema:
+```
+```
+
+### configurationDefaults
+> 为其他已注册的配置贡献默认值并覆盖它们的默认值
+```json
+{
+    "contributes": {
+        "configurationDefaults": {
+            "settingsEditorTestExtension.booleanExample": false,
+            "settingsEditorTestExtension.stringExample": "Hello World"
+        }
+    }
+}
+```
+为提供的语言贡献默认编辑器配置。例如，以下代码片段为该markdown语言贡献了默认编辑器配置：
+```json
+{
+    "contributes": {
+        "configurationDefaults": {
+            "[markdown]": {
+                "editor.wordWrap": "on",
+                "editor.quickSuggestions": {
+                    "comments": "off",
+                    "strings": "off",
+                    "other": "off"
+                }
+            }
+        }
+    }
+}
+```
+
 
 ## 不常用
 ### 认证 authentication
@@ -135,36 +247,6 @@ Detailed instructions for the skill...
 扩展程序可以通过 API 使用新的和现有的主题颜色ThemeColor：
 ```typescript
 const errorColor = new vscode.ThemeColor('superstatus.error');
-```
-
-### configuration
-> 用户可以在设置编辑器中设置这些配置选项，也可以直接编辑 settings.json 文件
-```json
-{
-    "contributes": {
-        "configuration": {
-            "title": "Settings Editor Test Extension",
-            "type": "object",
-            "properties": {
-                "settingsEditorTestExtension.booleanExample": {
-                    "type": "boolean",
-                    "default": true,
-                    "description": "Boolean Example"
-                },
-                "settingsEditorTestExtension.stringExample": {
-                    "type": "string",
-                    "default": "Hello World",
-                    "description": "String Example"
-                }
-            }
-        }
-    }
-}
-```
-
-### configurationDefaults
-> 
-```json
 ```
 
 ### customEditors

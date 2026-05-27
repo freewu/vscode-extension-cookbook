@@ -6,7 +6,7 @@
 ## 入门
 * [Hello World](./demo.get-start.md "第一个 Hello World 扩展")   
 * [用户体验指南](./demo.ui-guidelines.md "VScode UI 介绍")   
-* [Settings](./demo.settings.md "VScode Settings 配置相关")   
+* [扩展配置](./demo.settings.md "VScode Settings 配置相关")   
 
 ## API 
 * [authentication](./api.authentication.md "authentication 相关 API")   

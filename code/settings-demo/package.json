@@ -1,0 +1,115 @@
+{
+  "name": "settings-demo",
+  "displayName": "settings-demo",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.120.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "settings-demo.get.enumExample",
+        "title": "Demo3 get enumExample"
+      }
+    ],
+    "configuration": {
+      "title": "Settings Editor Test Extension",
+      "type": "object",
+      "properties": {
+        "demo3.booleanExample": {
+          "type": "boolean",
+          "default": true,
+          "description": "Boolean Example",
+          "order": 3,
+          "markdownDescription": "See the [bluefrog homepage](https://freewu.github.io/) \n\n next paragraph"
+        },
+        "demo3.stringExample": {
+          "type": "string",
+          "default": "bluefrog",
+          "order": 0,
+          "description": "String Example",
+          "maxLength": 100,
+          "minLength": 5
+        },
+        "demo3.numberExample": {
+          "type": "number",
+          "default": 100,
+          "order": 1,
+          "description": "Number Example",
+          "minimum": 0,
+          "maximum": 1000
+        },
+        "demo3.enumExample": {
+          "type": "string",
+          "enum": ["first", "second", "third"],
+          "markdownEnumDescriptions": [
+            "The *first* enum",
+            "The *second* enum",
+            "The *third* enum"
+          ],
+          "order": 0,
+          "enumItemLabels": ["1st", "2nd", "3rd"],
+          "default": "first",
+          "description": "Example setting with an enum"
+        },
+        "demo3.arrayExample": {
+          "type": "array",
+          "default": [],
+          "description": "Array Example"
+        },
+        "demo3.objetExample": {
+          "type": "object",
+          "default": {},
+          "description": "Object Example"
+        },
+        "demo3.deprecatedExample": {
+          "type": "string",
+          "default": "Deprecated property",
+          "description": "Deprecated Example",
+          "markdownDeprecationMessage": "**Deprecated**: This property is deprecated. Please use the new property instead."
+        },
+        "demo3.patternStringExample": {
+          "type": "string",
+          "default": "Hello World",
+          "pattern": "^[a-zA-Z0-9_]+$",
+          "patternErrorMessage": "Only letters, numbers, and underscores are allowed"
+        },
+        "demo3.dateFormatStringExample": {
+            "type": "string",
+            "default": "2023-01-01",
+            "format": "date",
+            "description": "Date format Example"
+        },
+        "demo3.multilineTextExample": {
+            "type": "string",
+            "default": "multilineText\n\nbluefrog\n\n",
+            "editPresentation": "multilineText"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "pnpm run compile && pnpm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.120.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "typescript-eslint": "^8.56.1",
+    "eslint": "^9.39.3",
+    "typescript": "^5.9.3",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
