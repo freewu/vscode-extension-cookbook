@@ -1,0 +1,36 @@
+{
+  "name": "api-languages-demo",
+  "displayName": "api languages demo",
+  "description": "vscode.languages 命名空间示例",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.120.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "demoLang.survey",
+        "title": "DemoLang 统计 VS Code 支持的语言数量"
+      },
+      {
+        "command": "demoLang.showInfo",
+        "title": "DemoLang 语言状态项点击"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.120.0",
+    "@types/node": "22.x",
+    "typescript": "^5.9.3"
+  }
+}

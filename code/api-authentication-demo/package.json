@@ -1,0 +1,40 @@
+{
+  "name": "api-authentication-demo",
+  "displayName": "api authentication demo",
+  "description": "vscode.authentication 命名空间示例",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.120.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "demoAuth.signIn",
+        "title": "DemoAuth 登录（创建会话）"
+      },
+      {
+        "command": "demoAuth.showAccounts",
+        "title": "DemoAuth 显示已有账号"
+      },
+      {
+        "command": "demoAuth.signOut",
+        "title": "DemoAuth 退出登录（移除会话）"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.120.0",
+    "@types/node": "22.x",
+    "typescript": "^5.9.3"
+  }
+}

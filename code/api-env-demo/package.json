@@ -1,0 +1,44 @@
+{
+  "name": "api-env-demo",
+  "displayName": "api env demo",
+  "description": "vscode.env 命名空间示例",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.120.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "demoEnv.info",
+        "title": "DemoEnv 打印运行环境信息"
+      },
+      {
+        "command": "demoEnv.clipboard",
+        "title": "DemoEnv 读写剪贴板"
+      },
+      {
+        "command": "demoEnv.openExternal",
+        "title": "DemoEnv 打开外部链接"
+      },
+      {
+        "command": "demoEnv.telemetry",
+        "title": "DemoEnv 发送一条遥测"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.120.0",
+    "@types/node": "22.x",
+    "typescript": "^5.9.3"
+  }
+}

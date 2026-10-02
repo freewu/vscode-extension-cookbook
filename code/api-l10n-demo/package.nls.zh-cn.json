@@ -1,0 +1,6 @@
+{
+  "displayName": "api l10n 本地化示例",
+  "description": "vscode.l10n 本地化 API 示例",
+  "demoL10n.hello.title": "DemoL10n 打个招呼",
+  "demoL10n.survey.title": "DemoL10n 本地化信息统计"
+}

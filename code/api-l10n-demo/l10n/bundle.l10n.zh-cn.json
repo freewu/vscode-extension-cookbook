@@ -1,0 +1,6 @@
+{
+  "Please enter your name": "请输入你的名字",
+  "Hello {0}, welcome to the demo!": "你好 {0}，欢迎使用本示例！",
+  "Found {count} installed extensions": "共发现 {count} 个已安装扩展",
+  "Translation bundle: {state}": "语言包：{state}"
+}

@@ -1,0 +1,6 @@
+{
+  "displayName": "api l10n demo",
+  "description": "vscode.l10n localization demo",
+  "demoL10n.hello.title": "DemoL10n Say hello",
+  "demoL10n.survey.title": "DemoL10n Localization survey"
+}

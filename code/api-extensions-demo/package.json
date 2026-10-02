@@ -1,0 +1,36 @@
+{
+  "name": "api-extensions-demo",
+  "displayName": "api extensions demo",
+  "description": "vscode.extensions 命名空间示例",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.120.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "demoExt.list",
+        "title": "DemoExt 列出所有扩展并激活选中的"
+      },
+      {
+        "command": "demoExt.showSelf",
+        "title": "DemoExt 显示本扩展信息"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.120.0",
+    "@types/node": "22.x",
+    "typescript": "^5.9.3"
+  }
+}
