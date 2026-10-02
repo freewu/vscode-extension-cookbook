@@ -1,0 +1,59 @@
+{
+  "version": 1.1,
+  "tags": [
+    {
+      "name": "demo-card",
+      "description": "Demo 卡片容器",
+      "attributes": [
+        {
+          "name": "title",
+          "description": "卡片标题"
+        },
+        {
+          "name": "elevation",
+          "description": "阴影等级",
+          "values": [
+            { "name": "0", "description": "无阴影" },
+            { "name": "1", "description": "轻微阴影" },
+            { "name": "2", "description": "明显阴影" }
+          ]
+        },
+        {
+          "name": "theme",
+          "description": "主题",
+          "valueSet": "demo-theme"
+        }
+      ]
+    },
+    {
+      "name": "demo-badge",
+      "description": "Demo 徽标",
+      "attributes": [
+        {
+          "name": "count",
+          "description": "徽标数字"
+        },
+        {
+          "name": "theme",
+          "description": "主题",
+          "valueSet": "demo-theme"
+        }
+      ]
+    }
+  ],
+  "globalAttributes": [
+    {
+      "name": "data-demo",
+      "description": "标记该节点由 Demo 组件渲染"
+    }
+  ],
+  "valueSets": [
+    {
+      "name": "demo-theme",
+      "values": [
+        { "name": "light", "description": "浅色" },
+        { "name": "dark", "description": "深色" }
+      ]
+    }
+  ]
+}

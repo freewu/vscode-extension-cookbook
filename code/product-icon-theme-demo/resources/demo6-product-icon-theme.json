@@ -1,0 +1,29 @@
+{
+  "$schema": "vscode://schemas/product-icon-theme",
+  // 字体声明：一个产品图标主题可以有多个字体，图标定义通过 fontId 引用
+  "fonts": [
+    {
+      "id": "demo6",
+      "src": [
+        {
+          // 字体文件路径，相对本文件
+          "path": "./../fonts/demo6.woff",
+          "format": "woff"
+        }
+      ],
+      "weight": "normal",
+      "style": "normal"
+    }
+  ],
+  // 图标定义：key 必须是 VS Code 约定的图标 ID（如 folder / file / symbol-method ...）
+  "iconDefinitions": {
+    "folder": { "fontCharacter": "\\ea01", "fontId": "demo6" },
+    "folder-opened": { "fontCharacter": "\\ea02", "fontId": "demo6" },
+    "file": { "fontCharacter": "\\ea03", "fontId": "demo6" },
+    "symbol-method": { "fontCharacter": "\\ea04", "fontId": "demo6" },
+    "symbol-class": { "fontCharacter": "\\ea05", "fontId": "demo6" },
+    "symbol-field": { "fontCharacter": "\\ea06", "fontId": "demo6" },
+    "symbol-variable": { "fontCharacter": "\\ea07", "fontId": "demo6" },
+    "debug-breakpoint": { "fontCharacter": "\\ea08", "fontId": "demo6" }
+  }
+}

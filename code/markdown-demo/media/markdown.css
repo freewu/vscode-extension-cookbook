@@ -1,0 +1,9 @@
+/* 通过 contributes.markdown.previewStyles 注入，作用于 Markdown 预览 */
+
+/* demo11_mark 规则产出的 <mark> */
+mark {
+	background-color: var(--vscode-editor-findMatchHighlightBackground, #fff3a3);
+	color: inherit;
+	padding: 0 2px;
+	border-radius: 2px;
+}

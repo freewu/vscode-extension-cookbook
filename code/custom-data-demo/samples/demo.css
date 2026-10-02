@@ -1,0 +1,27 @@
+/* 在这里试试补全：输入 --demo- 、@demo- 、:demo- */
+
+:root {
+	--demo-card-radius: 8px;
+	--demo-card-padding: 12px;
+}
+
+demo-card {
+	display: block;
+	border: 1px solid var(--vscode-panel-border, #ccc);
+	border-radius: var(--demo-card-radius);
+	padding: var(--demo-card-padding);
+}
+
+demo-card:demo-active {
+	outline: 2px solid var(--vscode-focusBorder, #0078d4);
+}
+
+demo-card::demo-arrow {
+	content: "→";
+}
+
+@demo-layer base {
+	demo-card {
+		margin: 4px;
+	}
+}

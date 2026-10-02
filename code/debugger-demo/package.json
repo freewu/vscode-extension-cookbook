@@ -1,0 +1,75 @@
+{
+  "name": "debugger-demo",
+  "displayName": "demo17 debugger",
+  "description": "调试器扩展 Debugger Extension 示例（内联 mock 调试适配器）",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.120.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onDebug",
+    "onDebugResolve:demo17",
+    "onDebugInitialConfigurations"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "debuggers": [
+      {
+        "type": "demo17",
+        "label": "Demo17 Mock 调试器",
+        "languages": [
+          "javascript"
+        ],
+        "configurationAttributes": {
+          "launch": {
+            "properties": {
+              "stopOnEntry": {
+                "type": "boolean",
+                "description": "启动后是否立刻中断在入口",
+                "default": true
+              },
+              "program": {
+                "type": "string",
+                "description": "被调试的脚本（本 demo 只回显，不会真的执行）",
+                "default": "${file}"
+              }
+            }
+          }
+        },
+        "initialConfigurations": [
+          {
+            "type": "demo17",
+            "request": "launch",
+            "name": "Demo17: Mock 调试",
+            "stopOnEntry": true
+          }
+        ],
+        "configurationSnippets": [
+          {
+            "label": "Demo17: Mock 调试",
+            "description": "启动 demo17 mock 调试器",
+            "body": {
+              "type": "demo17",
+              "request": "launch",
+              "name": "Demo17: Mock 调试",
+              "stopOnEntry": true
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.120.0",
+    "@types/node": "22.x",
+    "typescript": "^5.9.3"
+  }
+}

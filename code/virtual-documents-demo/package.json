@@ -1,0 +1,36 @@
+{
+  "name": "virtual-documents-demo",
+  "displayName": "demo14 virtual documents",
+  "description": "虚拟文档 Virtual Documents 示例",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.120.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "demo14.open",
+        "title": "Demo14 打开虚拟文档"
+      },
+      {
+        "command": "demo14.refresh",
+        "title": "Demo14 刷新虚拟文档"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.120.0",
+    "@types/node": "22.x",
+    "typescript": "^5.9.3"
+  }
+}

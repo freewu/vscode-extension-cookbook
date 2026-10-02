@@ -1,0 +1,21 @@
+{
+  "name": "product-icon-theme-demo",
+  "displayName": "demo6 product icon theme",
+  "description": "产品图标主题 Product Icon Theme 示例",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.120.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "productIconThemes": [
+      {
+        "id": "demo6-product-icon-theme",
+        "label": "Demo6 Product Icon Theme",
+        "path": "./resources/demo6-product-icon-theme.json"
+      }
+    ]
+  }
+}

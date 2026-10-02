@@ -1,0 +1,66 @@
+{
+  "name": "scm-demo",
+  "displayName": "demo16 source control",
+  "description": "源代码管理 Source Control 示例",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.120.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "demo16.commit",
+        "title": "Demo16 提交快照",
+        "icon": "$(check)"
+      },
+      {
+        "command": "demo16.open",
+        "title": "Demo16 打开文件"
+      },
+      {
+        "command": "demo16.revert",
+        "title": "Demo16 撤销到上次提交",
+        "icon": "$(discard)"
+      },
+      {
+        "command": "demo16.showDiff",
+        "title": "Demo16 与上次提交对比"
+      }
+    ],
+    "menus": {
+      "scm/title": [
+        {
+          "command": "demo16.commit",
+          "when": "scmProvider == demo16",
+          "group": "navigation"
+        }
+      ],
+      "scm/resourceState/context": [
+        {
+          "command": "demo16.revert",
+          "when": "scmProvider == demo16 && scmResourceState == demo16.resource",
+          "group": "inline"
+        },
+        {
+          "command": "demo16.showDiff",
+          "when": "scmProvider == demo16 && scmResourceState == demo16.resource"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.120.0",
+    "@types/node": "22.x",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "$schema": "vscode://schemas/color-theme",
+  "name": "Demo4 Color Theme",
+  "type": "dark",
+  "semanticHighlighting": true,
+  // 工作台 UI 配色：键名可在 https://code.visualstudio.com/api/references/theme-color 查询
+  "colors": {
+    "foreground": "#d4d4d4",
+    "focusBorder": "#0078d4",
+    "activityBar.background": "#1f2430",
+    "activityBar.foreground": "#d4d4d4",
+    "activityBarBadge.background": "#0078d4",
+    "sideBar.background": "#1a1f2b",
+    "sideBar.foreground": "#c8ccd4",
+    "sideBarSectionHeader.background": "#1f2430",
+    "editor.background": "#161b22",
+    "editor.foreground": "#d4d4d4",
+    "editor.lineHighlightBackground": "#1f2430",
+    "editor.selectionBackground": "#264f78",
+    "editorCursor.foreground": "#7dd3fc",
+    "editorLineNumber.foreground": "#4b5563",
+    "editorLineNumber.activeForeground": "#c8ccd4",
+    "statusBar.background": "#0078d4",
+    "statusBar.foreground": "#ffffff",
+    "titleBar.activeBackground": "#1f2430",
+    "titleBar.activeForeground": "#d4d4d4",
+    "terminal.background": "#161b22",
+    "terminal.foreground": "#d4d4d4"
+  },
+  // 语法着色：scope 遵循 TextMate 语法，可叠加多个 scope
+  "tokenColors": [
+    {
+      "name": "注释",
+      "scope": ["comment", "punctuation.definition.comment"],
+      "settings": {
+        "foreground": "#6b7280",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "关键字 / 控制流",
+      "scope": ["keyword", "storage.type", "storage.modifier"],
+      "settings": {
+        "foreground": "#c586c0"
+      }
+    },
+    {
+      "name": "字符串",
+      "scope": ["string", "string.quoted"],
+      "settings": {
+        "foreground": "#ce9178"
+      }
+    },
+    {
+      "name": "数字 / 常量",
+      "scope": ["constant.numeric", "constant.language"],
+      "settings": {
+        "foreground": "#b5cea8"
+      }
+    },
+    {
+      "name": "函数 / 方法",
+      "scope": ["entity.name.function", "support.function", "meta.function-call"],
+      "settings": {
+        "foreground": "#dcdcaa"
+      }
+    },
+    {
+      "name": "类型 / 类",
+      "scope": ["entity.name.type", "entity.name.class", "support.class"],
+      "settings": {
+        "foreground": "#4ec9b0"
+      }
+    },
+    {
+      "name": "变量 / 参数",
+      "scope": ["variable", "variable.parameter"],
+      "settings": {
+        "foreground": "#9cdcfe"
+      }
+    },
+    {
+      "name": "标签 / 属性",
+      "scope": ["entity.name.tag", "entity.other.attribute-name"],
+      "settings": {
+        "foreground": "#569cd6"
+      }
+    },
+    {
+      "name": "无效代码",
+      "scope": ["invalid"],
+      "settings": {
+        "foreground": "#f44747",
+        "fontStyle": "underline"
+      }
+    }
+  ],
+  // 语义着色：需要语言服务提供 semantic token，优先级高于 tokenColors
+  "semanticTokenColors": {
+    "variable.readonly": "#4fc1ff",
+    "parameter": "#9cdcfe",
+    "property": "#9cdcfe",
+    "type": "#4ec9b0",
+    "class": "#4ec9b0",
+    "function": "#dcdcaa"
+  }
+}

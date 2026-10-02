@@ -1,0 +1,21 @@
+{
+  "name": "color-theme-demo",
+  "displayName": "demo4 color theme",
+  "description": "彩色主题 Color Theme 示例",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.120.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Demo4 Color Theme",
+        "uiTheme": "vs-dark",
+        "path": "./themes/demo4-color-theme.json"
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "custom-data-demo",
+  "displayName": "demo18 custom data",
+  "description": "自定义数据 Custom Data 示例（纯声明式，无需代码）",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.120.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "html": {
+      "customData": [
+        "./data/html.html-data.json"
+      ]
+    },
+    "css": {
+      "customData": [
+        "./data/css.css-data.json"
+      ]
+    }
+  }
+}

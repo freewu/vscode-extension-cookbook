@@ -1,0 +1,44 @@
+{
+  "name": "custom-editors-demo",
+  "displayName": "demo13 custom editors",
+  "description": "自定义编辑器 Custom Editor 示例",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.120.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "customEditors": [
+      {
+        "viewType": "demo13.catEditor",
+        "displayName": "Demo13 猫咪编辑器",
+        "selector": [
+          {
+            "filenamePattern": "*.cat"
+          }
+        ],
+        "priority": "default"
+      }
+    ],
+    "commands": [
+      {
+        "command": "demo13.createSample",
+        "title": "Demo13 创建示例 .cat 文件"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.120.0",
+    "@types/node": "22.x",
+    "typescript": "^5.9.3"
+  }
+}

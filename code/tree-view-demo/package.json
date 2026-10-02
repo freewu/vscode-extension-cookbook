@@ -1,0 +1,71 @@
+{
+  "name": "tree-view-demo",
+  "displayName": "demo9 tree view",
+  "description": "树视图 Tree View 示例",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.120.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "demo9",
+          "title": "Demo9 Tree View",
+          "icon": "resources/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "demo9": [
+        {
+          "id": "demo9.fileExplorer",
+          "name": "文件树",
+          "icon": "resources/icon.svg"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "demo9.refresh",
+        "title": "Demo9 刷新文件树",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "demo9.openFile",
+        "title": "Demo9 打开文件"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "demo9.refresh",
+          "when": "view == demo9.fileExplorer",
+          "group": "navigation"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "demo9.openFile",
+          "when": "view == demo9.fileExplorer && viewItem == file",
+          "group": "inline"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.120.0",
+    "@types/node": "22.x",
+    "typescript": "^5.9.3"
+  }
+}

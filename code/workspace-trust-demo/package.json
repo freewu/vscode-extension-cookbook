@@ -1,0 +1,56 @@
+{
+  "name": "workspace-trust-demo",
+  "displayName": "demo7 workspace trust",
+  "description": "工作区信任 Workspace Trust 示例",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.120.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": "limited",
+      "description": "受限模式（Restricted Mode）下仅提供只读功能，执行脚本需要先信任工作区。",
+      "restrictedConfigurations": [
+        "demo7.secretToken"
+      ]
+    }
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "demo7.showTrustStatus",
+        "title": "Demo7 查看工作区信任状态"
+      },
+      {
+        "command": "demo7.runScript",
+        "title": "Demo7 执行脚本（需要信任）"
+      }
+    ],
+    "configuration": {
+      "title": "Demo7 Workspace Trust",
+      "type": "object",
+      "properties": {
+        "demo7.secretToken": {
+          "type": "string",
+          "default": "",
+          "description": "敏感配置：在受限模式下该配置不可读写。"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.120.0",
+    "@types/node": "22.x",
+    "typescript": "^5.9.3"
+  }
+}

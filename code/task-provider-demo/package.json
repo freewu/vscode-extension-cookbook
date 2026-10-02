@@ -1,0 +1,63 @@
+{
+  "name": "task-provider-demo",
+  "displayName": "demo15 task provider",
+  "description": "任务提供者 Task Provider 示例",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.120.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "taskDefinitions": [
+      {
+        "type": "demo15",
+        "required": [
+          "command"
+        ],
+        "properties": {
+          "command": {
+            "type": "string",
+            "description": "要执行的 mock 命令名"
+          },
+          "args": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "追加到命令后的参数",
+            "default": []
+          },
+          "fail": {
+            "type": "boolean",
+            "description": "是否故意让任务失败（用于演示 onDidEndTaskProcess）",
+            "default": false
+          }
+        }
+      }
+    ],
+    "commands": [
+      {
+        "command": "demo15.pickTask",
+        "title": "Demo15 选择并运行任务"
+      },
+      {
+        "command": "demo15.showTasks",
+        "title": "Demo15 列出所有 demo15 任务"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.120.0",
+    "@types/node": "22.x",
+    "typescript": "^5.9.3"
+  }
+}

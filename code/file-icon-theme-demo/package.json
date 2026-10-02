@@ -1,0 +1,21 @@
+{
+  "name": "file-icon-theme-demo",
+  "displayName": "demo5 file icon theme",
+  "description": "文件图标主题 File Icon Theme 示例",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.120.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "iconThemes": [
+      {
+        "id": "demo5-file-icon-theme",
+        "label": "Demo5 File Icon Theme",
+        "path": "./icons/demo5-icon-theme.json"
+      }
+    ]
+  }
+}

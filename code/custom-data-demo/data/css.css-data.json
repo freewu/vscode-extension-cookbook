@@ -1,0 +1,37 @@
+{
+  "version": 1.1,
+  "properties": [
+    {
+      "name": "--demo-card-radius",
+      "description": "Demo 卡片圆角",
+      "values": [
+        { "name": "4px" },
+        { "name": "8px" },
+        { "name": "16px" }
+      ]
+    },
+    {
+      "name": "--demo-card-padding",
+      "description": "Demo 卡片内边距",
+      "values": [{ "name": "8px" }, { "name": "12px" }, { "name": "16px" }]
+    }
+  ],
+  "atDirectives": [
+    {
+      "name": "@demo-layer",
+      "description": "Demo 分层指令"
+    }
+  ],
+  "pseudoClasses": [
+    {
+      "name": ":demo-active",
+      "description": "Demo 激活态"
+    }
+  ],
+  "pseudoElements": [
+    {
+      "name": "::demo-arrow",
+      "description": "Demo 箭头装饰"
+    }
+  ]
+}

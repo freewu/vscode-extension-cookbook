@@ -1,0 +1,34 @@
+{
+  "name": "markdown-demo",
+  "displayName": "demo11 markdown extension",
+  "description": "Markdown 扩展示例：markdown-it 插件 + 预览样式",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.120.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:markdown"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "markdown": {
+      "markdownItPlugins": true,
+      "previewStyles": [
+        "./media/markdown.css"
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.120.0",
+    "@types/node": "22.x",
+    "typescript": "^5.9.3"
+  }
+}

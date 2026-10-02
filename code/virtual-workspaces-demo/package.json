@@ -1,0 +1,42 @@
+{
+  "name": "virtual-workspaces-demo",
+  "displayName": "demo8 virtual workspaces",
+  "description": "虚拟工作区 Virtual Workspaces 示例",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.120.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "capabilities": {
+    "virtualWorkspaces": {
+      "supported": "limited",
+      "description": "支持虚拟工作区，但仅使用 vscode.workspace.fs 访问文件，不使用 Node.js 的 fs 模块。"
+    }
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "demo8.showWorkspaceInfo",
+        "title": "Demo8 查看工作区信息"
+      },
+      {
+        "command": "demo8.writeNotes",
+        "title": "Demo8 写入并读取笔记（workspace.fs）"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.120.0",
+    "@types/node": "22.x",
+    "typescript": "^5.9.3"
+  }
+}

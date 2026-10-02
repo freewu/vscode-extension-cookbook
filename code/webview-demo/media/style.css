@@ -1,0 +1,33 @@
+/* Webview 内使用 VS Code 主题变量，自动适配浅色/深色主题 */
+body {
+	padding: 16px 20px;
+	color: var(--vscode-foreground);
+	background-color: var(--vscode-editor-background);
+	font-family: var(--vscode-font-family);
+	font-size: var(--vscode-font-size);
+}
+
+h1 {
+	font-size: 1.4em;
+	border-bottom: 1px solid var(--vscode-panel-border);
+	padding-bottom: 6px;
+}
+
+button {
+	margin: 4px 8px 4px 0;
+	padding: 4px 12px;
+	color: var(--vscode-button-foreground);
+	background-color: var(--vscode-button-background);
+	border: none;
+	border-radius: 2px;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: var(--vscode-button-hoverBackground);
+}
+
+#color {
+	font-weight: bold;
+	color: var(--vscode-textLink-foreground);
+}
