@@ -7,6 +7,25 @@
 * [Hello World](./demo.get-start.md "第一个 Hello World 扩展")   
 * [用户体验指南](./demo.ui-guidelines.md "VScode UI 介绍")   
 * [扩展配置](./demo.settings.md "VScode Settings 配置相关")   
+* [欢迎页面](./demo.welcome-page.md "VScode 欢迎页面相关")   
+
+## 扩展指南
+* [命令 Command](./guide.command.md "命令 Command")   
+* [彩色主题 Color Theme](./guide.color-theme.md "彩色主题 Color Theme")   
+* [文件图标主题 File Icon Theme](./guide.file-icon-theme.md "文件图标主题 File Icon Theme")   
+* [产品图标主题 Product Icon Theme](./guide.product-icon-theme.md "产品图标主题 Product Icon Theme")   
+* [工作区信任 Workspace Trust](./guide.workspace-trust.md "工作区信任 Workspace Trust")   
+* [虚拟工作区 Virtual Workspaces](./guide.virtual-workspaces.md "虚拟工作区 Virtual Workspaces")   
+* [树视图 Tree View](./guide.tree-view.md "树视图 Tree View")   
+* [Webview](./guide.webview.md "Webview")   
+* [Markdown 扩展](./guide.markdown.md "Markdown 扩展")   
+* [扩展测试 Test Extension](./guide.test-extension.md "扩展测试 Test Extension")   
+* [自定义编辑器 Custom Editors](./guide.custom-editors.md "自定义编辑器 Custom Editors")   
+* [虚拟文档 Virtual Documents](./guide.virtual-documents.md "虚拟文档 Virtual Documents")   
+* [任务提供者 Task Provider](./guide.task-provider.md "任务提供者 Task Provider")   
+* [源代码管理 Source Control](./guide.source-control.md "源代码管理 Source Control")   
+* [调试器扩展 Debugger Extension](./guide.debugger-extension.md "调试器扩展 Debugger Extension")   
+* [自定义数据 Custom Data](./guide.custom-data.md "自定义数据 Custom Data")   
 
 ## API 
 * [authentication](./api.authentication.md "authentication 相关 API")   
