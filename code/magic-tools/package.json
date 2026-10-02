@@ -1,0 +1,153 @@
+{
+	"name": "magic-tools",
+	"displayName": "Magic Tools for VSCode",
+	"description": "多合一工具箱：Tree View 工具清单 + Webview 结果面板 + 任务联动",
+	"version": "0.0.1",
+	"publisher": "vscode-extension-cookbook",
+	"license": "MIT",
+	"engines": {
+		"vscode": "^1.120.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+		"tools",
+		"webview",
+		"tree view"
+	],
+	"activationEvents": [],
+	"main": "./out/extension.js",
+	"contributes": {
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "magicTools",
+					"title": "Magic Tools",
+					"icon": "resources/icon.svg"
+				}
+			]
+		},
+		"views": {
+			"magicTools": [
+				{
+					"id": "magicTools.tools",
+					"name": "工具箱",
+					"icon": "resources/icon.svg"
+				}
+			]
+		},
+		"commands": [
+			{
+				"command": "magicTools.pickTool",
+				"title": "Magic Tools: 选择并运行工具",
+				"icon": "$(list-selection)"
+			},
+			{
+				"command": "magicTools.runTool",
+				"title": "Magic Tools: 运行工具",
+				"icon": "$(play)"
+			},
+			{
+				"command": "magicTools.refresh",
+				"title": "Magic Tools: 刷新工具列表",
+				"icon": "$(refresh)"
+			},
+			{
+				"command": "magicTools.copyResult",
+				"title": "Magic Tools: 复制上一次结果",
+				"icon": "$(copy)"
+			}
+		],
+		"menus": {
+			"commandPalette": [
+				{
+					"command": "magicTools.runTool",
+					"when": "false"
+				}
+			],
+			"view/title": [
+				{
+					"command": "magicTools.pickTool",
+					"when": "view == magicTools.tools",
+					"group": "navigation@1"
+				},
+				{
+					"command": "magicTools.refresh",
+					"when": "view == magicTools.tools",
+					"group": "navigation@2"
+				}
+			],
+			"view/item/context": [
+				{
+					"command": "magicTools.runTool",
+					"when": "view == magicTools.tools && viewItem == tool",
+					"group": "inline"
+				}
+			]
+		},
+		"keybindings": [
+			{
+				"command": "magicTools.pickTool",
+				"key": "ctrl+alt+m",
+				"mac": "cmd+alt+m"
+			}
+		],
+		"configuration": {
+			"title": "Magic Tools",
+			"properties": {
+				"magicTools.enabledKinds": {
+					"type": "array",
+					"default": [
+						"text",
+						"encode",
+						"generate",
+						"project"
+					],
+					"items": {
+						"type": "string",
+						"enum": [
+							"text",
+							"encode",
+							"generate",
+							"project"
+						],
+						"enumDescriptions": [
+							"文本工具",
+							"编码 / 解码",
+							"生成器",
+							"项目工具"
+						]
+					},
+					"markdownDescription": "只显示这些分类下的工具。",
+					"scope": "window"
+				},
+				"magicTools.previewMaxLines": {
+					"type": "number",
+					"default": 400,
+					"minimum": 20,
+					"maximum": 5000,
+					"markdownDescription": "结果面板最多预览的行数，超出部分会被截断（完整内容仍可复制）。",
+					"scope": "window"
+				},
+				"magicTools.autoCopyResult": {
+					"type": "boolean",
+					"default": false,
+					"markdownDescription": "运行工具后自动把结果写入剪贴板。",
+					"scope": "window"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"package": "vsce package"
+	},
+	"devDependencies": {
+		"@types/node": "22.x",
+		"@types/vscode": "^1.120.0",
+		"typescript": "^5.9.3"
+	}
+}

@@ -1,0 +1,97 @@
+/* 全部颜色取自 VS Code 主题变量，自动适配浅色 / 深色 / 高对比度主题 */
+:root {
+	--gap: 10px;
+}
+
+html,
+body {
+	height: 100%;
+	margin: 0;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	font-family: var(--vscode-font-family);
+	font-size: var(--vscode-font-size);
+	color: var(--vscode-foreground);
+	background-color: var(--vscode-editor-background);
+}
+
+.toolbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--gap);
+	padding: var(--gap) 14px;
+	border-bottom: 1px solid var(--vscode-panel-border, rgba(128, 128, 128, 0.35));
+	background-color: var(--vscode-sideBar-background, transparent);
+	flex-wrap: wrap;
+}
+
+.meta {
+	display: flex;
+	align-items: baseline;
+	gap: 8px;
+	min-width: 0;
+	flex-wrap: wrap;
+}
+
+.tool {
+	font-weight: 600;
+}
+
+.badge {
+	padding: 1px 6px;
+	border-radius: 10px;
+	font-size: 0.85em;
+	color: var(--vscode-badge-foreground);
+	background-color: var(--vscode-badge-background);
+}
+
+.summary {
+	opacity: 0.75;
+	font-size: 0.9em;
+}
+
+.actions {
+	display: flex;
+	gap: 6px;
+}
+
+button {
+	padding: 3px 12px;
+	border: 1px solid var(--vscode-button-border, transparent);
+	border-radius: 4px;
+	color: var(--vscode-button-secondaryForeground, var(--vscode-button-foreground));
+	background-color: var(--vscode-button-secondaryBackground, var(--vscode-button-background));
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: var(--vscode-button-secondaryHoverBackground, var(--vscode-button-hoverBackground));
+}
+
+.notice {
+	padding: 6px 14px;
+	font-size: 0.9em;
+	color: var(--vscode-editorInfo-foreground, var(--vscode-foreground));
+	border-bottom: 1px solid var(--vscode-panel-border, rgba(128, 128, 128, 0.35));
+}
+
+#result {
+	flex: 1;
+	margin: 0;
+	padding: 14px;
+	overflow: auto;
+	white-space: pre-wrap;
+	word-break: break-word;
+	font-family: var(--vscode-editor-font-family, monospace);
+	font-size: var(--vscode-editor-font-size, 13px);
+	line-height: 1.5;
+	tab-size: 4;
+}
+
+#result:focus {
+	outline: 1px solid var(--vscode-focusBorder);
+}

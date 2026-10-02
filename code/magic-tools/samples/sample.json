@@ -1,0 +1,10 @@
+{
+	"name": "sample",
+	"private": true,
+	"scripts": {
+		"compile": "tsc -p ./",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"nested": { "a": [1, 2, { "b": "c" }] }
+}
